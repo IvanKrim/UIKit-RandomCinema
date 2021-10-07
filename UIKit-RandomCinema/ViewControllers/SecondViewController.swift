@@ -9,8 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    @IBOutlet weak var cinemaCover: UIImageView!
-    
+    @IBOutlet var cinemaCover: UIImageView!
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var movieLength: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -23,12 +22,21 @@ class SecondViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         fetchKino()
     }
+    
+    @IBAction func backButtonPressed() {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func reloadButtonPressed() {
+        
+    }
+    
 }
 
 extension SecondViewController {
     
     func fetchKino() {
-        let stringUrl = "https://api.kinopoisk.dev/movie?field=rating.kp&search=7-10&field=rating.imdb&search=7.5-10&field=rating.tmdb&search=7-10&field=year&search=1990-2020&field=typeNumber&search=1&sortField=votes.imdb&sortType=-1&limit=1&page=10&token=Z1KQTWB-7Z8MDMM-KEKM5RB-5Y2P1YE"
+        let stringUrl = "https://api.kinopoisk.dev/movie?field=rating.kp&search=7-10&field=rating.imdb&search=7.5-10&field=rating.tmdb&search=7-10&field=year&search=1990-2020&field=typeNumber&search=1&sortField=votes.imdb&sortType=-1&limit=1&page=112&token=Z1KQTWB-7Z8MDMM-KEKM5RB-5Y2P1YE"
         
         guard let url = URL(string: stringUrl) else { return }
         let task = URLSession.shared.dataTask(with: url) {( data, _, error) in
@@ -48,10 +56,10 @@ extension SecondViewController {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                self.yearLabel.text = "\(cinema.docs.first!.year)"
-                self.descriptionLabel.text = cinema.docs.first!.description
+                self.yearLabel.text = "\(cinema.docs.first?.year ?? 0)"
+                self.descriptionLabel.text = cinema.docs.first?.description ?? "Empty"
                 self.cinemaCover.image = UIImage(data: imageData)
-                self.movieLength.text = "\(cinema.docs.first!.movieLength)"
+                self.movieLength.text = "\(cinema.docs.first?.movieLength ?? 0)"
                 self.activityIndicator.stopAnimating()
             }
         }
