@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA921270ECFFD0062EC32 /* Cinema.swift */; };
+		FC6DE6E027109D87001F5445 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6DF27109D87001F5445 /* NetworkManager.swift */; };
+		FC6DE6E32710A439001F5445 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6E22710A439001F5445 /* ApiManager.swift */; };
 		FCA2186A270DDC3E00DEBA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21869270DDC3E00DEBA20 /* AppDelegate.swift */; };
 		FCA2186C270DDC3E00DEBA20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2186B270DDC3E00DEBA20 /* SceneDelegate.swift */; };
 		FCA2186E270DDC3E00DEBA20 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA2186D270DDC3E00DEBA20 /* FirstViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		FC1EA921270ECFFD0062EC32 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		FC6DE6DF27109D87001F5445 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FC6DE6E22710A439001F5445 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FCA21866270DDC3E00DEBA20 /* UIKit-RandomCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-RandomCinema.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA21869270DDC3E00DEBA20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA2186B270DDC3E00DEBA20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FC6DE6E127109D91001F5445 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FC6DE6DF27109D87001F5445 /* NetworkManager.swift */,
+				FC6DE6E22710A439001F5445 /* ApiManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		FCA2185D270DDC3E00DEBA20 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FC1EA923270ED0050062EC32 /* Model */,
+				FC6DE6E127109D91001F5445 /* Managers */,
 				FCA21882270DDCC000DEBA20 /* ViewControllers */,
 				FCA2187F270DDC7D00DEBA20 /* Storyboards */,
 				FCA21880270DDC9900DEBA20 /* Supporting */,
@@ -184,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6DE6E027109D87001F5445 /* NetworkManager.swift in Sources */,
 				FCA21888270DE10400DEBA20 /* SecondViewController.swift in Sources */,
 				FCA2186E270DDC3E00DEBA20 /* FirstViewController.swift in Sources */,
+				FC6DE6E32710A439001F5445 /* ApiManager.swift in Sources */,
 				FCA2186A270DDC3E00DEBA20 /* AppDelegate.swift in Sources */,
 				FCA2186C270DDC3E00DEBA20 /* SceneDelegate.swift in Sources */,
 				FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */,

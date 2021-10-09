@@ -185,7 +185,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reload"/>
                                 <connections>
-                                    <action selector="reloadButtonPressed:" destination="Kbg-If-KDX" eventType="touchUpInside" id="dRl-QJ-bzY"/>
+                                    <action selector="reloadButtonPressed" destination="Kbg-If-KDX" eventType="touchUpInside" id="EQu-0c-r0S"/>
                                 </connections>
                             </button>
                         </subviews>
