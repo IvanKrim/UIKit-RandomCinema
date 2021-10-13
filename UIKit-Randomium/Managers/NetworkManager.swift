@@ -8,12 +8,14 @@
 import Foundation
 
 class NetworkManager {
+    
     static let shared = NetworkManager()
+    
     private init() {}
     
     func fetchCinema(completion: @escaping (Cinema) -> ()) {
         
-        guard let url = URL(string: ApiManager.shared.stringUrl) else { return }
+        guard let url = URL(string: ApiManager.shared.cinemaURL) else { return }
         URLSession.shared.dataTask(with: url) { ( data, _, error) in
             
             if let error = error {

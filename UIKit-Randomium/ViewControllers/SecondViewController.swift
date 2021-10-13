@@ -20,6 +20,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        
         fetchContent()
     }
     

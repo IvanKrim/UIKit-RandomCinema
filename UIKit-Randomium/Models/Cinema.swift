@@ -16,7 +16,6 @@ struct Doc: Codable {
     let name: String
     let description: String
     let year: Int
-    
     let movieLength: Int
 }
 
