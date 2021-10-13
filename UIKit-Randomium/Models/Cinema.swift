@@ -13,11 +13,9 @@ struct Cinema: Codable {
 
 struct Doc: Codable {
     let poster: Poster
-    let rating: Rating
     let name: String
     let description: String
     let year: Int
-    
     let movieLength: Int
 }
 
@@ -25,6 +23,3 @@ struct Poster: Codable {
     let url: String
 }
 
-struct Rating: Codable {
-    let imdb: Double
-}
