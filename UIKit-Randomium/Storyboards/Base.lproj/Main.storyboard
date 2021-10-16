@@ -55,6 +55,9 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Ppd-Y2-5UJ" kind="presentation" id="lek-iL-hSY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -238,6 +241,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgO-FS-jKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-835" y="1152"/>
+        </scene>
+        <!--Music Album View Controller-->
+        <scene sceneID="qtc-Gy-YXJ">
+            <objects>
+                <viewController id="Ppd-Y2-5UJ" customClass="MusicAlbumViewController" customModule="UIKit_RandomCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rAG-ZL-UOP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-Ud-ikw">
+                                <rect key="frame" x="10" y="50" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Aee-nG-2dK"/>
+                                    <constraint firstAttribute="height" constant="300" id="Hww-uw-wtg"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="drF-YD-15H">
+                                <rect key="frame" x="10" y="370" width="300" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtistName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5T-yC-g0L">
+                                        <rect key="frame" x="107" y="0.0" width="86" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-3d-krZ">
+                                        <rect key="frame" x="103" y="32.5" width="94" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-hI-Rid">
+                                <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KzL-mQ-9Ct"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ahO-hI-Rid" firstAttribute="centerY" secondItem="rAG-ZL-UOP" secondAttribute="centerY" id="EXB-bt-UlE"/>
+                            <constraint firstItem="3hV-Ud-ikw" firstAttribute="leading" secondItem="KzL-mQ-9Ct" secondAttribute="leading" constant="10" id="IxL-nX-xZB"/>
+                            <constraint firstItem="drF-YD-15H" firstAttribute="leading" secondItem="KzL-mQ-9Ct" secondAttribute="leading" constant="10" id="Qjt-cj-T3C"/>
+                            <constraint firstItem="drF-YD-15H" firstAttribute="top" secondItem="3hV-Ud-ikw" secondAttribute="bottom" constant="20" id="Rfn-te-GYG"/>
+                            <constraint firstItem="ahO-hI-Rid" firstAttribute="centerX" secondItem="rAG-ZL-UOP" secondAttribute="centerX" id="vEb-aB-4pS"/>
+                            <constraint firstItem="KzL-mQ-9Ct" firstAttribute="trailing" secondItem="drF-YD-15H" secondAttribute="trailing" constant="10" id="vz3-pZ-a38"/>
+                            <constraint firstItem="3hV-Ud-ikw" firstAttribute="top" secondItem="KzL-mQ-9Ct" secondAttribute="top" constant="50" id="yqe-wf-lLo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ahO-hI-Rid" id="thJ-AZ-Iz5"/>
+                        <outlet property="albumCoverImage" destination="3hV-Ud-ikw" id="F7a-Ks-7hW"/>
+                        <outlet property="albumName" destination="1h3-3d-krZ" id="tKB-Bv-QAx"/>
+                        <outlet property="artistName" destination="e5T-yC-g0L" id="yYJ-hG-qDL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnP-86-Qy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588.75" y="922.18309859154931"/>
         </scene>
     </scenes>
     <resources>

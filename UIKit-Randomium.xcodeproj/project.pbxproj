@@ -18,6 +18,7 @@
 		FCA21873270DDC4100DEBA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA21872270DDC4100DEBA20 /* Assets.xcassets */; };
 		FCA21876270DDC4100DEBA20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA21874270DDC4100DEBA20 /* LaunchScreen.storyboard */; };
 		FCA21888270DE10400DEBA20 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA21887270DE10400DEBA20 /* SecondViewController.swift */; };
+		FCC8DA42271B5FEA00210FF5 /* MusicAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8DA41271B5FEA00210FF5 /* MusicAlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FCA21875270DDC4100DEBA20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCA21877270DDC4100DEBA20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA21887270DE10400DEBA20 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		FCC8DA41271B5FEA00210FF5 /* MusicAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				FCA2186D270DDC3E00DEBA20 /* MainViewController.swift */,
 				FCA21887270DE10400DEBA20 /* SecondViewController.swift */,
+				FCC8DA41271B5FEA00210FF5 /* MusicAlbumViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				FC6DE6E32710A439001F5445 /* ApiManager.swift in Sources */,
 				FCA2186A270DDC3E00DEBA20 /* AppDelegate.swift in Sources */,
 				FC6E444A27173A2B00BCEB7B /* MusicAlbum.swift in Sources */,
+				FCC8DA42271B5FEA00210FF5 /* MusicAlbumViewController.swift in Sources */,
 				FCA2186C270DDC3E00DEBA20 /* SceneDelegate.swift in Sources */,
 				FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */,
 			);

@@ -32,4 +32,24 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    func fetchMusicAlbum(completion: @escaping (MusicAlbum) -> ()) {
+        
+        guard let url = URL(string: ApiManager.shared.musicURL) else { return }
+        URLSession.shared.dataTask(with: url) { ( data, _, error) in
+            
+            if let error = error {
+                print("This id error - \(error.localizedDescription)")
+                return
+            }
+            guard let data = data else { return }
+            
+            do {
+                let musicAlbum = try JSONDecoder().decode(MusicAlbum.self, from: data)
+                completion(musicAlbum)
+            } catch let jsonError {
+                print("Ошибка получения данных", jsonError)
+            }
+        }.resume()
+    }
 }

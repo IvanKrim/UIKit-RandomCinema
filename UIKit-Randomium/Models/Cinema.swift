@@ -23,3 +23,31 @@ struct Poster: Codable {
     let url: String
 }
 
+// MUSIC 
+struct MusicAlbum: Codable {
+    let albums: Albums
+}
+
+struct Albums: Codable {
+    let album: [Album]
+}
+
+struct Album: Codable {
+    let name: String
+    let artist: Artist
+    let image: [Image]
+}
+
+struct Artist: Codable {
+    let name: String
+}
+
+struct Image: Codable {
+    let text: String
+    let size: String
+    
+    enum CodingKeys: String, CodingKey {
+        case text = "#text"
+        case size
+    }
+}
