@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35CEAD00444D85FDA95F95B5 /* Pods_UIKit_RandomCinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C314D779851DD524D48F4D24 /* Pods_UIKit_RandomCinema.framework */; };
 		FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA921270ECFFD0062EC32 /* Cinema.swift */; };
 		FC6DE6E027109D87001F5445 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6DF27109D87001F5445 /* NetworkManager.swift */; };
 		FC6DE6E32710A439001F5445 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6E22710A439001F5445 /* ApiManager.swift */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11AD48DC0A85E754B2C7CEE6 /* Pods-UIKit-RandomCinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-RandomCinema.release.xcconfig"; path = "Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema.release.xcconfig"; sourceTree = "<group>"; };
+		C314D779851DD524D48F4D24 /* Pods_UIKit_RandomCinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_RandomCinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAAFBD17AE2ED16E4910CCFC /* Pods-UIKit-RandomCinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-RandomCinema.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema.debug.xcconfig"; sourceTree = "<group>"; };
 		FC1EA921270ECFFD0062EC32 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
 		FC6DE6DF27109D87001F5445 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC6DE6E22710A439001F5445 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -43,12 +47,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CEAD00444D85FDA95F95B5 /* Pods_UIKit_RandomCinema.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46381EF0BF5EDF79EFCBF4F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAAFBD17AE2ED16E4910CCFC /* Pods-UIKit-RandomCinema.debug.xcconfig */,
+				11AD48DC0A85E754B2C7CEE6 /* Pods-UIKit-RandomCinema.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D7B83B9F819B8CC191E44210 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C314D779851DD524D48F4D24 /* Pods_UIKit_RandomCinema.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC1EA923270ED0050062EC32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +95,8 @@
 			children = (
 				FCA21868270DDC3E00DEBA20 /* UIKit-Randomium */,
 				FCA21867270DDC3E00DEBA20 /* Products */,
+				46381EF0BF5EDF79EFCBF4F4 /* Pods */,
+				D7B83B9F819B8CC191E44210 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCA2187A270DDC4100DEBA20 /* Build configuration list for PBXNativeTarget "UIKit-RandomCinema" */;
 			buildPhases = (
+				22EEB69C4B9FA5F370F3145A /* [CP] Check Pods Manifest.lock */,
 				FCA21862270DDC3E00DEBA20 /* Sources */,
 				FCA21863270DDC3E00DEBA20 /* Frameworks */,
 				FCA21864270DDC3E00DEBA20 /* Resources */,
+				2495288850A92408FEEECCB9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +225,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22EEB69C4B9FA5F370F3145A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKit-RandomCinema-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2495288850A92408FEEECCB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCA21862270DDC3E00DEBA20 /* Sources */ = {
@@ -356,6 +425,7 @@
 		};
 		FCA2187B270DDC4100DEBA20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAFBD17AE2ED16E4910CCFC /* Pods-UIKit-RandomCinema.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -387,6 +457,7 @@
 		};
 		FCA2187C270DDC4100DEBA20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11AD48DC0A85E754B2C7CEE6 /* Pods-UIKit-RandomCinema.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
