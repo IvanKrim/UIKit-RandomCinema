@@ -1,0 +1,6 @@
+framework module Pods_UIKit_RandomCinema {
+  umbrella header "Pods-UIKit-RandomCinema-umbrella.h"
+
+  export *
+  module * { export * }
+}
