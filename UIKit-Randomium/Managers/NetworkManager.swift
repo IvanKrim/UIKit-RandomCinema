@@ -13,20 +13,40 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchCinema(completion: @escaping (Cinema) -> ()) {
-        
+    //    func fetchCinema(with completion: @escaping (Cinema) -> ()) {
+    //        guard let url = URL(string: ApiManager.shared.cinemaURL) else { return }
+    //
+    //        URLSession.shared.dataTask(with: url) { ( data, _, error) in
+    //            if let error = error {
+    //                print("This error - \(error.localizedDescription)")
+    //                return
+    //            }
+    //            guard let data = data else { return }
+    //
+    //            do {
+    //                let cinema = try JSONDecoder().decode(Cinema.self, from: data)
+    //                completion(cinema)
+    //            } catch let jsonError {
+    //                print("Ошибка получения данных", jsonError)
+    //            }
+    //        }.resume()
+    //    }
+    
+    func fetchCinema(with completion: @escaping (Cinema) -> ()) {
         guard let url = URL(string: ApiManager.shared.cinemaURL) else { return }
+        
         URLSession.shared.dataTask(with: url) { ( data, _, error) in
-            
             if let error = error {
-                print("This id error - \(error.localizedDescription)")
+                print("This error - \(error.localizedDescription)")
                 return
             }
             guard let data = data else { return }
             
             do {
                 let cinema = try JSONDecoder().decode(Cinema.self, from: data)
-                completion(cinema)
+                DispatchQueue.main.async {
+                    completion(cinema)
+                }
             } catch let jsonError {
                 print("Ошибка получения данных", jsonError)
             }

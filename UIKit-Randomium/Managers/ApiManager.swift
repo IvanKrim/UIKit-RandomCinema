@@ -21,7 +21,6 @@ class ApiManager {
         "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=hiphop&page=12&limit=1&api_key=a0bf4153be487520e2978308fa1fc53b&format=json"
     }
     
-    
     func randomPage() {
         pageNumber = Int.random(in: 0..<300)
     }
