@@ -30,7 +30,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Cinema"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Movie"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="15"/>
@@ -232,9 +232,9 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="activityIndicator" destination="50C-dz-DMP" id="dzR-yr-AVo"/>
-                        <outlet property="cinemaCover" destination="TPN-I1-k70" id="Bgs-To-7kV"/>
                         <outlet property="descriptionLabel" destination="6WX-c9-BZz" id="qhm-PA-wMH"/>
                         <outlet property="movieLength" destination="cLM-uw-B1P" id="QeJ-xR-XnE"/>
+                        <outlet property="moviePoster" destination="TPN-I1-k70" id="Bgs-To-7kV"/>
                         <outlet property="yearLabel" destination="37T-hY-VEC" id="cBA-JS-cfV"/>
                     </connections>
                 </viewController>

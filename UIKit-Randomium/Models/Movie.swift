@@ -1,13 +1,13 @@
 //
-//  Cinema.swift
+//  Movie.swift
 //  UIKit-RandomCinema
 //
 //  Created by Kalabishka Ivan on 07.10.2021.
 //
 
-import Foundation
 
-struct Cinema: Codable {
+//MARK: - Movies Model
+struct Movie: Codable {
     let docs: [Doc]
 }
 
@@ -23,7 +23,7 @@ struct Poster: Codable {
     let url: String
 }
 
-// MUSIC 
+//MARK: - MusicMusicAlbum Model
 struct MusicAlbum: Codable {
     let albums: Albums
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35CEAD00444D85FDA95F95B5 /* Pods_UIKit_RandomCinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C314D779851DD524D48F4D24 /* Pods_UIKit_RandomCinema.framework */; };
-		FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA921270ECFFD0062EC32 /* Cinema.swift */; };
+		FC1EA922270ECFFD0062EC32 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EA921270ECFFD0062EC32 /* Movie.swift */; };
 		FC6DE6E027109D87001F5445 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6DF27109D87001F5445 /* NetworkManager.swift */; };
 		FC6DE6E32710A439001F5445 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6DE6E22710A439001F5445 /* ApiManager.swift */; };
 		FC6E444A27173A2B00BCEB7B /* MusicAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E444927173A2B00BCEB7B /* MusicAlbum.swift */; };
@@ -26,7 +26,7 @@
 		11AD48DC0A85E754B2C7CEE6 /* Pods-UIKit-RandomCinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-RandomCinema.release.xcconfig"; path = "Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema.release.xcconfig"; sourceTree = "<group>"; };
 		C314D779851DD524D48F4D24 /* Pods_UIKit_RandomCinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_RandomCinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAFBD17AE2ED16E4910CCFC /* Pods-UIKit-RandomCinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-RandomCinema.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-RandomCinema/Pods-UIKit-RandomCinema.debug.xcconfig"; sourceTree = "<group>"; };
-		FC1EA921270ECFFD0062EC32 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		FC1EA921270ECFFD0062EC32 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FC6DE6DF27109D87001F5445 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC6DE6E22710A439001F5445 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FC6E444927173A2B00BCEB7B /* MusicAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAlbum.swift; sourceTree = "<group>"; };
@@ -60,7 +60,6 @@
 				DAAFBD17AE2ED16E4910CCFC /* Pods-UIKit-RandomCinema.debug.xcconfig */,
 				11AD48DC0A85E754B2C7CEE6 /* Pods-UIKit-RandomCinema.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,7 +74,7 @@
 		FC1EA923270ED0050062EC32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC1EA921270ECFFD0062EC32 /* Cinema.swift */,
+				FC1EA921270ECFFD0062EC32 /* Movie.swift */,
 				FC6E444927173A2B00BCEB7B /* MusicAlbum.swift */,
 			);
 			path = Models;
@@ -281,7 +280,7 @@
 				FC6E444A27173A2B00BCEB7B /* MusicAlbum.swift in Sources */,
 				FCC8DA42271B5FEA00210FF5 /* MusicAlbumViewController.swift in Sources */,
 				FCA2186C270DDC3E00DEBA20 /* SceneDelegate.swift in Sources */,
-				FC1EA922270ECFFD0062EC32 /* Cinema.swift in Sources */,
+				FC1EA922270ECFFD0062EC32 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

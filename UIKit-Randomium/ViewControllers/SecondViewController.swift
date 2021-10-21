@@ -5,13 +5,15 @@
 //  Created by Kalabishka Ivan on 06.10.2021.
 //
 
+
+
+
 import UIKit
 
 class SecondViewController: UIViewController {
     
-    private var cinema: Cinema?
-    
-    @IBOutlet var cinemaCover: UIImageView!
+    // MARK: - IB Outlets
+    @IBOutlet var moviePoster: UIImageView!
     @IBOutlet var yearLabel: UILabel!
     @IBOutlet var movieLength: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -26,6 +28,7 @@ class SecondViewController: UIViewController {
         fetchContent()
     }
     
+    // MARK: - IB Action
     @IBAction func backButtonPressed() {
         dismiss(animated: true)
     }
@@ -38,26 +41,24 @@ class SecondViewController: UIViewController {
 }
 
 extension SecondViewController {
+    // MARK: - Private Methods
     private func fetchContent() {
-        NetworkManager.shared.fetchCinema { cinema in
-            let imageString = "\(cinema.docs.first?.poster.url ?? "Empty")"
-            guard let imageURL = URL(string: imageString) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+        NetworkManager.shared.fetchMovie { movie in
+            self.yearLabel.text = "\(movie.docs.first?.year ?? 0)"
+            self.movieLength.text = "\(movie.docs.first?.movieLength ?? 0)"
+            self.descriptionLabel.text = movie.docs.first?.description
+            guard let imageData = ImageManager.shared.fetchImage(from: movie.docs.first?.poster.url) else { return }
             
-            self.yearLabel.text = "\(cinema.docs.first?.year ?? 0)"
-            self.descriptionLabel.text = cinema.docs.first?.description ?? "Empty"
-            self.cinemaCover.image = UIImage(data: imageData)
-            self.movieLength.text = "\(cinema.docs.first?.movieLength ?? 0)"
-            self.activityIndicator.stopAnimating()
-            //            DispatchQueue.main.async {
-            //                self.yearLabel.text = "\(cinema.docs.first?.year ?? 0)"
-            //                self.descriptionLabel.text = cinema.docs.first?.description ?? "Empty"
-            //                self.cinemaCover.image = UIImage(data: imageData)
-            //                self.movieLength.text = "\(cinema.docs.first?.movieLength ?? 0)"
-            //                self.activityIndicator.stopAnimating()
-            //            }
+            DispatchQueue.main.async {
+                self.moviePoster.image = UIImage(data: imageData)
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
 }
+
+
+
+
 
 
