@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class MusicAlbumViewController: UIViewController {
-
+    
     @IBOutlet var albumCoverImage: UIImageView!
     
     @IBOutlet var artistName: UILabel!
@@ -22,44 +22,25 @@ class MusicAlbumViewController: UIViewController {
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
-//        fetchContent()
-        alamofireFetchMusicAlbum()
+        fetchContent()
     }
 }
 
 extension MusicAlbumViewController {
     
-    func alamofireFetchMusicAlbum() {
-        AF.request(ApiManager.shared.musicURL)
-            .validate()
-            .responseDecodable (of: MusicAlbum.self) { dataResponse in
-                switch dataResponse.result {
-                    
-                case let .success(musicData):
-                    self.artistName.text = musicData.albums.album.first?.artist.name
-                    self.albumName.text = musicData.albums.album.first?.name
-                    self.activityIndicator.stopAnimating()
-                case let .failure(error):
-                    print(error)
-                }
+    private func fetchContent() {
+        NetworkManager.shared.fetchMusicAlbum { musicAlbum in
+            self.artistName.text = musicAlbum.albums.album.first?.artist.name
+            self.albumName.text = musicAlbum.albums.album.first?.name
+            self.activityIndicator.stopAnimating()
+            print(musicAlbum.albums.album.first?.image.first?.text ?? "no image data")
+            
+            guard let imageData = ImageManager.shared.fetchImage(from: musicAlbum.albums.album.first?.image[3].text) else { return }
+            
+            DispatchQueue.main.async {
+                self.albumCoverImage.image = UIImage(data: imageData)
+                self.activityIndicator.stopAnimating()
             }
+        }
     }
-    
-    
-//    private func fetchContent() {
-//        NetworkManager.shared.fetchMusicAlbum { musicAlbum in
-////            let imageString = "\(musicAlbum.albums.album.first?.image.first?.text ?? "No image")"
-//            let imageString = "\(musicAlbum.albums.album.first?.image[3].text ?? "Noooo")"
-//            print(imageString)
-//            guard let imageURL = URL(string: imageString) else { return }
-//            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-//
-//            DispatchQueue.main.async {
-//                self.albumCoverImage.image = UIImage(data: imageData)
-//                self.artistName.text = musicAlbum.albums.album.first?.artist.name
-//                self.albumName.text = musicAlbum.albums.album.first?.name
-//                self.activityIndicator.stopAnimating()
-//            }
-//        }
-//    }
 }

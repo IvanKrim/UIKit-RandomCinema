@@ -12,15 +12,15 @@ struct Movie: Codable {
 }
 
 struct Doc: Codable {
-    let poster: Poster
-    let name: String
-    let description: String
-    let year: Int
-    let movieLength: Int
+    let poster: Poster?
+    let name: String?
+    let description: String?
+    let year: Int?
+    let movieLength: Int?
 }
 
 struct Poster: Codable {
-    let url: String
+    let url: String?
 }
 
 //MARK: - MusicMusicAlbum Model
